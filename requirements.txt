@@ -5,3 +5,4 @@ python-dotenv
 openai
 chromadb
 waitress
+pydantic==1.10.11

@@ -1,6 +1,6 @@
 Flask
 Flask_Cors
-langchain
+langchain==0.0.236
 python-dotenv
 openai
 chromadb

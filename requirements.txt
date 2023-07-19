@@ -1,6 +1,6 @@
-Flask==2.2.3
-Flask_Cors==4.0.0
-langchain==0.0.236
-python-dotenv==1.0.0
-openai==0.27.8
-chromadb==0.3.29
+Flask
+Flask_Cors
+langchain
+python-dotenv
+openai
+chromadb

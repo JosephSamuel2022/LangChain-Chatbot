@@ -4,3 +4,4 @@ langchain
 python-dotenv
 openai
 chromadb
+waitress

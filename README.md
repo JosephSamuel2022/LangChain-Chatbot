@@ -5,7 +5,7 @@ This repository contains a simple Flask-based API that serves as a chatbot. The 
 POST /api/chatbot: This endpoint receives questions in JSON format and responds with answers based on the information available in the "data.txt" file.
 
 ## Example Usage
-To ask a question to the chatbot, send a POST request with the question to the endpoint http://localhost:5000/api/chatbot. The question should be provided in JSON format, like this:
+To ask a question to the chatbot, send a POST request with the question to the endpoint /api/chatbot. The question should be provided in JSON format, like this:
 
 {
     "question": "What is your name?"

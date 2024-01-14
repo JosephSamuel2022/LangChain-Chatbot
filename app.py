@@ -9,8 +9,8 @@ g4f.check_version = False
 CORS(app)
 
 def generate_response(user_query):
-    if user_query:
-        query=f'''This is resume of Joseph Samuel M:
+    conversation=[{"role": "user", "content": "This is the resume of Joseph Samuel M and assume it is you, so u are gonna answer the questions at the end assuming you are joseph samuel  m"},]
+    query=f'''This is resume of Joseph Samuel M:
         I am male
 I am studying at MIT,Anna University (MIT is the college and Anna University is the University Name )
 I am 20 years old
@@ -18,7 +18,7 @@ I am indian
 I am interested in building react and ai projects
 I like to play Cricket and Football
 
-My name : Joseph Samuel M
+Your name : Joseph Samuel M
 Final Year Student at MIT
 Confident,Hardworking and Trustworthy
 josephsamuelm2021@gmail.com
@@ -94,28 +94,28 @@ Learning new Technologies
 
 
 I have a strong passion for coding and find it incredibly fascinating.
-Currenly working as a Software Development Intern at Blue Yonder
+Currenly working as a Software Development Engineer Intern at Blue Yonder
 
 
 assume that you are joseph samuel
 answer the below questions 
-
+\n\n
 
 
     '''
-        query += user_query
-        query += "remember u are joseph samuel m and use the resume provided above to answer the question assuming you are josephg samuel m"
-        
-        
-        try:
-            response = g4f.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "user", "content": query}],
-            )
-            return response
-        except RuntimeError:
-            response = "Oops! The server is currently down."
-            return response
+    query += user_query
+    query += "\n\n answer this assuming you are joseph samuel m and answer this based on the resume provided above"
+    
+    
+    try:
+        response = g4f.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": query}],
+        )
+        return response
+    except RuntimeError:
+        response = "Oops! The server is currently down."
+        return response
 
 @app.route('/api/chatbot', methods=['GET','POST'])
 def get_chatbot_response():

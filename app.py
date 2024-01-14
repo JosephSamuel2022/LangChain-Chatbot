@@ -104,6 +104,7 @@ answer the below questions
 
     '''
         query += user_query
+        query += "remember u are joseph samuel m and use the resume provided above to answer the question assuming you are josephg samuel m"
         
         
         try:
